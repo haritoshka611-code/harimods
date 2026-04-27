@@ -2,69 +2,58 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Windows Hub | HariMods</title>
+    <title>Windows ISO Hub | HariMods</title>
     <style>
-        body { background-color: #0f0f0f; color: white; font-family: 'Segoe UI', sans-serif; display: flex; flex-direction: column; align-items: center; padding: 50px 20px; }
-        .back { color: #00a4ef; text-decoration: none; align-self: flex-start; margin-bottom: 20px; font-weight: bold; }
-        h1 { color: #00a4ef; margin-bottom: 10px; }
-        .section-title { width: 100%; max-width: 800px; border-bottom: 2px solid #00a4ef; margin: 40px 0 20px; padding-bottom: 5px; color: #00a4ef; font-size: 1.5rem; }
-        
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; width: 100%; max-width: 800px; }
-        
-        .item-card { background: #1a1a1a; border: 1px solid #333; padding: 20px; border-radius: 12px; display: flex; justify-content: space-between; align-items: center; transition: 0.3s; }
-        .item-card:hover { border-color: #00a4ef; background: #222; }
-        
-        .info h3 { margin: 0; font-size: 1.1rem; }
-        .info p { color: #888; font-size: 0.85rem; margin: 5px 0 0; }
-        
-        .dl-btn { background: #00a4ef; color: white; padding: 8px 15px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 0.9rem; }
-        .dl-btn:hover { background: #0081bb; }
-        
-        .iso-icon { color: #00a4ef; margin-right: 10px; }
+        body { background-color: #0f0f0f; color: white; font-family: 'Segoe UI', sans-serif; padding: 50px 20px; display: flex; flex-direction: column; align-items: center; }
+        .back { color: #00a4ef; text-decoration: none; align-self: flex-start; margin-bottom: 20px; }
+        h1 { color: #00a4ef; text-align: center; }
+        .container { width: 100%; max-width: 1000px; }
+        .section-title { border-bottom: 2px solid #00a4ef; margin: 40px 0 20px; padding-bottom: 5px; color: #00a4ef; font-size: 1.4rem; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; }
+        .card { background: #1a1a1a; border: 1px solid #333; padding: 15px; border-radius: 10px; display: flex; flex-direction: column; gap: 10px; }
+        .card:hover { border-color: #00a4ef; background: #222; }
+        .dl-btn { background: #00a4ef; color: white; text-align: center; padding: 8px; border-radius: 5px; text-decoration: none; font-weight: bold; font-size: 0.85rem; }
+        .tag { font-size: 0.7rem; background: #333; padding: 2px 6px; border-radius: 4px; color: #aaa; }
     </style>
 </head>
 <body>
-    <a href="index.html" class="back">← Назад</a>
-    <h1>🪟 Windows Ресурсы</h1>
-    <p>Образы систем и полезные скрипты в одном месте</p>
+    <div class="container">
+        <a href="index.html" class="back">← Назад на главную</a>
+        <h1>📀 Центр загрузки Windows ISO</h1>
 
-    <!-- РАЗДЕЛ: ОПЕРАЦИОННЫЕ СИСТЕМЫ -->
-    <div class="section-title">💿 Образы Windows (ISO)</div>
-    <div class="grid">
-        <div class="item-card">
-            <div class="info">
-                <h3>Windows 11 Pro</h3>
-                <p>Официальный образ (23H2) x64</p>
+        <!-- Windows 11 -->
+        <div class="section-title">Windows 11 (x64 only)</div>
+        <div class="grid">
+            <div class="card">
+                <div><strong>Windows 11 24H2</strong> <span class="tag">Новинка</span></div>
+                <a href="ССЫЛКА_ТУТ" class="dl-btn">Скачать ISO</a>
             </div>
-            <a href="ССЫЛКА_НА_ISO_11" class="dl-btn">Скачать</a>
-        </div>
-        <div class="item-card">
-            <div class="info">
-                <h3>Windows 10 Pro</h3>
-                <p>Стабильная версия 22H2 x64</p>
+            <div class="card">
+                <div><strong>Windows 11 23H2</strong> <span class="tag">Stable</span></div>
+                <a href="ССЫЛКА_ТУТ" class="dl-btn">Скачать ISO</a>
             </div>
-            <a href="ССЫЛКА_НА_ISO_10" class="dl-btn">Скачать</a>
+            <div class="card">
+                <div><strong>Windows 11 22H2 / 21H2</strong></div>
+                <a href="ССЫЛКА_ТУТ" class="dl-btn">Скачать ISO</a>
+            </div>
         </div>
+
+        <!-- Windows 10 -->
+        <div class="section-title">Windows 10 (22H2)</div>
+        <div class="grid">
+            <div class="card">
+                <div><strong>Windows 10 x64</strong> <span class="tag">Все редакции</span></div>
+                <a href="ССЫЛКА_ТУТ" class="dl-btn">Скачать ISO</a>
+            </div>
+            <div class="card">
+                <div><strong>Windows 10 x32</strong> <span class="tag">Все редакции</span></div>
+                <a href="ССЫЛКА_ТУТ" class="dl-btn">Скачать ISO</a>
+            </div>
+        </div>
+
+        <!-- Скоро будет -->
+        <div class="section-title">В разработке</div>
+        <p style="color: #666;">Версии 25H2 и Enterprise LTSC будут добавлены по мере выхода официальных образов.</p>
     </div>
-
-    <!-- РАЗДЕЛ: BAT / CMD СКРИПТЫ -->
-    <div class="section-title">📜 BAT / CMD Скрипты</div>
-    <div class="grid">
-        <div class="item-card">
-            <div class="info">
-                <h3>Очистка Кэша</h3>
-                <p>Удаляет временные файлы системы (.bat)</p>
-            </div>
-            <a href="cleaner.bat" class="dl-btn" download>Скачать</a>
-        </div>
-        <div class="item-card">
-            <div class="info">
-                <h3>Оптимизация сети</h3>
-                <p>Сброс DNS и ускорение пинга (.cmd)</p>
-            </div>
-            <a href="net_fix.cmd" class="dl-btn" download>Скачать</a>
-        </div>
-    </div>
-
 </body>
 </html>

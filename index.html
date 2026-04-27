@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мои Проекты | Скрипты и Моды</title>
+    <style>
+        body {
+            background-color: #0f0f0f;
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 50px 20px;
+        }
+        h1 { color: #00ff88; text-shadow: 0 0 10px #00ff8855; }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 1000px;
+            width: 100%;
+            margin-top: 30px;
+        }
+        .card {
+            background: #1a1a1a;
+            border: 1px solid #333;
+            padding: 30px;
+            text-align: center;
+            border-radius: 15px;
+            transition: 0.3s;
+            cursor: pointer;
+            text-decoration: none;
+            color: white;
+        }
+        .card:hover {
+            border-color: #00ff88;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 255, 136, 0.1);
+        }
+        .card i { font-size: 40px; margin-bottom: 15px; display: block; }
+        .card h3 { margin: 0; font-size: 1.2rem; }
+        .card p { color: #888; font-size: 0.9rem; margin-top: 10px; }
+        
+        /* Цвета для разных категорий */
+        .mc { border-bottom: 4px solid #3e9e3e; } /* Зеленый для Minecraft */
+        .win { border-bottom: 4px solid #00a4ef; } /* Синий для Win */
+        .lin { border-bottom: 4px solid #f8d000; } /* Желтый для Linux */
+        .prog { border-bottom: 4px solid #a333ff; } /* Фиолетовый для Программ */
+    </style>
+</head>
+<body>
+
+    <h1>Центр разработки</h1>
+    <p>Выбирай нужную категорию ниже</p>
+
+    <div class="container">
+        <!-- Кнопка: Моды Minecraft -->
+        <a href="minecraft.html" class="card mc">
+            <h3>📦 Моды для Minecraft</h3>
+            <p>Текстуры, шейдеры и дополнения</p>
+        </a>
+
+        <!-- Кнопка: Скрипты Windows -->
+        <a href="windows.html" class="card win">
+            <h3>🪟 Скрипты для Windows</h3>
+            <p>Автоматизация и .bat файлы</p>
+        </a>
+
+        <!-- Кнопка: Скрипты Linux -->
+        <a href="linux.html" class="card lin">
+            <h3>🐧 Скрипты для Linux</h3>
+            <p>Bash-скрипты и конфиги</p>
+        </a>
+
+        <!-- Кнопка: Программы -->
+        <a href="apps.html" class="card prog">
+            <h3>💻 Программы</h3>
+            <p>Софт на C#, Python и др.</p>
+        </a>
+    </div>
+
+</body>
+</html>

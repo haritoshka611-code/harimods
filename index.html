@@ -155,4 +155,68 @@
     setupProfile();
 </script>
 
+    <!-- Стили для красивого вида -->
+<style>
+    #bot-container { position: fixed; bottom: 20px; right: 20px; font-family: sans-serif; z-index: 1000; }
+    #bot-button { width: 60px; height: 60px; background: #007bff; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+    #bot-window { display: none; width: 300px; height: 400px; background: white; border-radius: 15px; flex-direction: column; box-shadow: 0 5px 25px rgba(0,0,0,0.2); overflow: hidden; margin-bottom: 10px; }
+    #bot-header { background: #007bff; color: white; padding: 15px; font-weight: bold; }
+    #bot-messages { flex: 1; padding: 10px; overflow-y: auto; display: flex; flex-direction: column; gap: 8px; }
+    .msg { padding: 8px 12px; border-radius: 12px; max-width: 80%; font-size: 14px; }
+    .bot { background: #f0f0f0; align-self: flex-start; }
+    .user { background: #007bff; color: white; align-self: flex-end; }
+    #bot-input-area { display: flex; padding: 10px; border-top: 1px solid #eee; }
+    #bot-input { flex: 1; border: none; outline: none; }
+</style>
+
+<div id="bot-container">
+    <div id="bot-window">
+        <div id="bot-header">Harimods Helper</div>
+        <div id="bot-messages">
+            <div class="msg bot">Привет! Я бот Harimods. Чем помочь?</div>
+        </div>
+        <div id="bot-input-area">
+            <input type="text" id="bot-input" placeholder="Напиши сообщение...">
+            <button onclick="sendMessage()" style="border:none; background:none; cursor:pointer;">🚀</button>
+        </div>
+    </div>
+    <div id="bot-button" onclick="toggleBot()">
+        <span style="color:white; font-size: 30px;">💬</span>
+    </div>
+</div>
+
+<script>
+    function toggleBot() {
+        const window = document.getElementById('bot-window');
+        window.style.display = window.style.display === 'flex' ? 'none' : 'flex';
+    }
+
+    function sendMessage() {
+        const input = document.getElementById('bot-input');
+        const msgText = input.value.trim();
+        if (!msgText) return;
+
+        addMessage(msgText, 'user');
+        input.value = '';
+
+        // Простая логика ответов
+        setTimeout(() => {
+            let response = "Я пока только учусь, но скоро смогу помогать с модами!";
+            if (msgText.toLowerCase().includes("привет")) response = "И тебе привет! Зацени наши моды в разделе Apps.";
+            if (msgText.toLowerCase().includes("майнкрафт")) response = "Майнкрафт — это круто! Посмотри раздел Minecraft.html.";
+            
+            addMessage(response, 'bot');
+        }, 1000);
+    }
+
+    function addMessage(text, side) {
+        const container = document.getElementById('bot-messages');
+        const div = document.createElement('div');
+        div.className = `msg ${side}`;
+        div.innerText = text;
+        container.appendChild(div);
+        container.scrollTop = container.scrollHeight;
+    }
+</script>
+
 </html>
